@@ -102,7 +102,7 @@ const PlatformFeaturesSection = () => {
     <section className="py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-20 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-6 text-balance">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-balance">
             The complete platform to{" "}
             <span className="text-primary italic">optimize</span> the logistics
             lifecycle.
@@ -125,7 +125,7 @@ const PlatformFeaturesSection = () => {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">
+                  <h3 className="text-3xl font-bold  mb-4">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground mb-8 text-lg">

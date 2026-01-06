@@ -17,7 +17,7 @@ const Navbar = () => {
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
     { id: "track", label: "Track" },
-    { id: "support", label: "Customer Support" },
+    { id: "footer", label: "Customer Support" },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -62,7 +62,7 @@ const Navbar = () => {
   // }, [pathname]);
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] lg:w-[90%] max-w-7xl bg-background backdrop-blur-lg border border-border/50 rounded-2xl z-40 shadow-soft">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] lg:w-[90%] max-w-7xl bg-foreground backdrop-blur-lg border border-border/50 rounded-2xl z-40 shadow-soft">
       <div className="px-6" ref={menuRef}>
         <div className="flex items-center justify-between h-17.5">
           {/* Logo */}
@@ -82,7 +82,7 @@ const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link)}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-background hover:text-primary transition-colors"
               >
                 {link.label}
               </button>
@@ -122,13 +122,16 @@ const Navbar = () => {
                 <button
                   key={link.id}
                   onClick={() => handleNavClick(link)}
-                  className="block w-full text-left px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                  className="block w-full text-left px-3 py-2 text-white hover:text-primary transition-colors"
                 >
                   {link.label}
                 </button>
               ))}
               <div className="pt-4 space-y-2">
-                <Button onClick={() => router.push("/login")} className="w-full">
+                <Button
+                  onClick={() => router.push("/login")}
+                  className="w-full"
+                >
                   Log in
                 </Button>
               </div>

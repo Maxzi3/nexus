@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -11,6 +10,14 @@ import {
   Box,
   AlertCircle,
   CheckCircle2,
+  Scale,
+  Hash,
+  Truck,
+  Calendar,
+  Clock,
+  Ship,
+  Globe,
+  Info,
 } from "lucide-react";
 import {
   AlertDialog,
@@ -21,7 +28,6 @@ import {
   AlertDialogTitle,
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
-import { Badge } from "@/components/ui/badge";
 
 const TrackingInput = ({
   placeholder = "Enter Tracking ID",
@@ -31,6 +37,7 @@ const TrackingInput = ({
   className?: string;
 }) => {
   const [trackingId, setTrackingId] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [order, setOrder] = useState<any>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -84,8 +91,7 @@ const TrackingInput = ({
       </div>
 
       <AlertDialog open={open} onOpenChange={setOpen}>
-        <AlertDialogContent className=" p-0 overflow-hidden border-none shadow-2xl">
-          {/* Header with Background Accent */}
+        <AlertDialogContent className="p-0 border-none shadow-2xl max-h-[90vh] overflow-hidden flex flex-col">
           <div
             className={`p-6 text-white ${
               error ? "bg-destructive" : "bg-primary"
@@ -108,14 +114,13 @@ const TrackingInput = ({
             </div>
           </div>
 
-          <div className="p-6">
+          <div className="flex-1 overflow-y-auto p-6">
             {error ? (
               <div className="py-4 text-center text-muted-foreground">
                 {error}. Please check the tracking number and try again.
               </div>
             ) : order ? (
-              <div className="space-y-6">
-                {/* Status Section */}
+              <div className="space-y-6 ">
                 <div className="flex justify-between items-center bg-muted/50 p-4 rounded-xl border border-border">
                   <div>
                     <p className="text-xs uppercase text-muted-foreground font-semibold">
@@ -134,7 +139,6 @@ const TrackingInput = ({
                   />
                 </div>
 
-                {/* Detail Grid */}
                 <div className="grid gap-4">
                   <div className="flex gap-3 items-start">
                     <User className="h-5 w-5 text-primary mt-0.5" />
@@ -143,6 +147,7 @@ const TrackingInput = ({
                       <p className="font-medium">{order.customerName}</p>
                     </div>
                   </div>
+
                   <div className="flex gap-3 items-start">
                     <MapPin className="h-5 w-5 text-primary mt-0.5" />
                     <div>
@@ -152,6 +157,7 @@ const TrackingInput = ({
                       <p className="font-medium">{order.address}</p>
                     </div>
                   </div>
+
                   <div className="flex gap-3 items-start">
                     <Box className="h-5 w-5 text-primary mt-0.5" />
                     <div>
@@ -159,6 +165,118 @@ const TrackingInput = ({
                         Goods Type
                       </p>
                       <p className="font-medium">{order.goodsType}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Scale className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Weight (kg)
+                      </p>
+                      <p className="font-medium">{order.weight}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Hash className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">Quantity</p>
+                      <p className="font-medium">{order.quantity}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Truck className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Shipment Mode
+                      </p>
+                      <p className="font-medium">{order.shipmentMode}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Calendar className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Expected Delivery
+                      </p>
+                      <p className="font-medium">
+                        {order.expectedDeliveryDate
+                          ? new Date(
+                              order.expectedDeliveryDate
+                            ).toLocaleDateString()
+                          : "-"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Clock className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Departure Time
+                      </p>
+                      <p className="font-medium">
+                        {order.departureTime || "-"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Calendar className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Pickup Date
+                      </p>
+                      <p className="font-medium">
+                        {order.pickupDate
+                          ? new Date(order.pickupDate).toLocaleDateString()
+                          : "-"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Clock className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Pickup Time
+                      </p>
+                      <p className="font-medium">{order.pickupTime}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Ship className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Shipper Info
+                      </p>
+                      <p className="font-medium whitespace-pre-line">
+                        {order.shipperInfo.replace(/ \*/g, "\n")}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Globe className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">Origin</p>
+                      <p className="font-medium">{order.origin}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 items-start">
+                    <Info className="h-5 w-5 text-primary mt-0.5" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">
+                        Package Details
+                      </p>
+                      <p className="font-medium">
+                        {order.packageDetails || "-"}
+                      </p>
                     </div>
                   </div>
                 </div>

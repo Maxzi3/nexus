@@ -38,9 +38,9 @@ export default function AdminLayout({
   };
 
   return (
-    <div className="min-h-screen flex bg-background text-white">
+    <div className="min-h-screen flex bg-background text-foreground">
       {/* Sidebar (desktop) */}
-      <aside className="hidden md:flex w-64 border-r border-white/10 p-6 flex-col gap-6">
+      <aside className="hidden md:flex w-64 border-r border-foregroung p-6 flex-col gap-6">
         <h2 className="text-2xl font-bold">Admin</h2>
 
         {links.map((link) => (

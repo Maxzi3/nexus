@@ -1,8 +1,15 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Box, CheckCircle, Truck } from "lucide-react";
 import TrackingInput from "./tracking-input";
 
 export function Hero() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden bg-linear-to-b from-background via-background to-secondary/20 lg:p-20 mt-10">
       {/* Background Truck Visualization (Simplified Grid/Line version) */}
@@ -16,7 +23,7 @@ export function Hero() {
 
       <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-white mb-8">
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-foreground mb-8">
             Unified <br />
             <span className="text-primary italic">Logistics</span> <br />
             Platform
@@ -29,13 +36,13 @@ export function Hero() {
 
           <TrackingInput className="max-w-md mx-auto md:hidden" />
 
-
           <div className="md:flex flex-col sm:flex-row gap-4 hidden ">
             <Button
+              onClick={() => scrollToSection("track")}
               size="lg"
               className="bg-primary text-lg h-14 px-8 rounded-full"
             >
-              Track Items
+              Track Package
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             {/* <Button
@@ -55,9 +62,7 @@ export function Hero() {
               <Box className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-sm font-bold text-white">
-                Shipment Efficiency
-              </p>
+              <p className="text-sm font-bold ">Shipment Efficiency</p>
               <p className="text-xs text-muted-foreground">+32% Increase</p>
             </div>
           </div>
@@ -67,17 +72,17 @@ export function Hero() {
               <CheckCircle className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-sm font-bold text-white">Driver Compliance</p>
+              <p className="text-sm font-bold ">Driver Compliance</p>
               <p className="text-xs text-muted-foreground">99.8% Accuracy</p>
             </div>
           </div>
 
           <div className="absolute bottom-0 left-20 p-4 rounded-2xl bg-background/40 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center gap-4 animate-bounce-slow [animation-delay:2s]">
-            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white">
+            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
               <Truck className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-sm font-bold text-white">Vehicle & Route</p>
+              <p className="text-sm font-bold ">Vehicle & Route</p>
               <p className="text-xs text-muted-foreground">Optimal Pathing</p>
             </div>
           </div>

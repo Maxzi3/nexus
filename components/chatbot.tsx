@@ -16,7 +16,7 @@ export default function ChatBot() {
     setMessages([...messages, input]);
     setMessages((prev) => [
       ...prev,
-      "Please email us at support@yourcompany.com for assistance.",
+      "Please email us at nexusgloballogisticscontact@gmail.com for assistance.",
     ]);
     setInput("");
   };

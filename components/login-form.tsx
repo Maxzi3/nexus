@@ -62,7 +62,7 @@ export default function LoginForm() {
       <div className="min-h-screen flex items-center justify-center bg-background px-4 -mt-16">
         <form
           onSubmit={handleLogin}
-          className="w-full max-w-md bg-card p-8 rounded-xl border border-border flex flex-col gap-6 shadow-lg"
+          className="w-full max-w-md bg-foreground p-8 rounded-xl border border-border flex flex-col gap-6 shadow-lg"
         >
           <div className="text-center">
             <Image

@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-// import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook } from "lucide-react";
+import { FaTelegram } from "react-icons/fa6";
+
 import Image from "next/image";
 
 const Footer = () => {
@@ -11,15 +13,14 @@ const Footer = () => {
     { label: "Customer Support", href: "#contact" },
   ];
 
-  //   const socialLinks = [
-  //     { icon: Facebook, href: "#" },
-  //     { icon: Twitter, href: "#" },
-  //     { icon: Instagram, href: "#" },
-  //     { icon: Linkedin, href: "#" },
-  //   ];
+  const socialLinks = [
+    { icon: Facebook, href: "#" },
+
+    { icon: FaTelegram, href: "https://t.me/nexusgloballogistics" },
+  ];
 
   return (
-    <footer className="bg-background border-t border-white/10 py-16">
+    <footer id="footer" className="bg-foreground border-t border-white/10 py-16">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between gap-12">
         {/* Logo & Brand */}
         <div className="flex flex-col">
@@ -54,12 +55,14 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="flex flex-col gap-2">
           <h4 className="text-white font-semibold mb-4">Contact</h4>
-          <p className="text-sm text-muted-foreground">support@logistics.com</p>
+          <p className="text-sm text-muted-foreground">
+            nexusgloballogisticscontact@gmail.com
+          </p>
           <p className="text-sm text-primary">Respond within a min</p>
         </div>
 
         {/* Socials */}
-        {/* <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
           <h4 className="text-white font-semibold mb-4">Follow Us</h4>
           <div className="flex gap-4">
             {socialLinks.map((social, i) => {
@@ -76,8 +79,8 @@ const Footer = () => {
                 </a>
               );
             })}
-          </div> */}
-        {/* </div> */}
+          </div>
+        </div>
       </div>
 
       {/* Copyright */}

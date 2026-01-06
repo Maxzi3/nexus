@@ -35,7 +35,7 @@ const StatsSection = () => {
               key={i}
               className="p-8 rounded-xl border border-white/10 bg-background/30"
             >
-              <p className="text-4xl font-bold text-white mb-2">{stat.value}</p>
+              <p className="text-4xl font-bold mb-2">{stat.value}</p>
               <p className="text-muted-foreground text-sm mb-2">{stat.label}</p>
               {stat.subLabel && (
                 <p className="text-xs font-black uppercase tracking-widest text-white/20">

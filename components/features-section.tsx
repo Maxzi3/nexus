@@ -43,7 +43,7 @@ const Featuressection = () => {
         </p>
       </div>
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-foreground">
           {features.map((feature, i) => {
             const Icon = feature.icon;
 
@@ -52,11 +52,9 @@ const Featuressection = () => {
                 key={i}
                 className="p-8 group hover:bg-white/2 transition-colors"
               >
-                <Icon className="w-8 h-8 mb-4 text-white group-hover:text-primary transition-colors" />
+                <Icon className="w-8 h-8 mb-4 group-hover:text-primary transition-colors" />
 
-                <p className="text-lg font-bold text-white mb-2">
-                  {feature.title}
-                </p>
+                <p className="text-lg font-bold mb-2">{feature.title}</p>
 
                 <p className="text-muted-foreground text-sm mb-4 leading-tight">
                   {feature.description}

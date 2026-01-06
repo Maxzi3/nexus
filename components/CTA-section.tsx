@@ -15,7 +15,7 @@ const CTASection = () => {
         </div>
 
         {/* Headline */}
-        <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-10 text-balance">
+        <h2 className="text-5xl md:text-7xl font-bold  tracking-tighter mb-10 text-balance">
           Join the future of <span className="text-primary italic">global</span>{" "}
           supply chain.
         </h2>
@@ -30,8 +30,8 @@ const CTASection = () => {
           </Button>
           <Button
             size="lg"
-            variant="outline"
-            className="border-white/10 hover:bg-white/5 text-white rounded-full h-16 px-10 text-lg bg-transparent"
+            variant="ghost"
+            className="rounded-full h-16 px-10 text-lg "
           >
             Contact Sales
           </Button>
