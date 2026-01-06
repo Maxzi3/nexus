@@ -14,7 +14,7 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nexus-logistics.vercel.app"), 
+  metadataBase: new URL("https://nexusglobal-logistics.vercel.app/"),
   title: "Nexus Global Logistics – Reliable Shipping & Tracking",
   description:
     "Nexus Global Logistics provides fast, secure, and trackable shipping solutions worldwide. Track shipments, manage deliveries, and optimize logistics effortlessly.",
@@ -28,13 +28,16 @@ export const metadata: Metadata = {
     "global logistics",
   ],
   authors: [
-    { name: "Nexus Global Logistics", url: "https://nexus-logistics.vercel.app" },
+    {
+      name: "Nexus Global Logistics",
+      url: "hhttps://nexusglobal-logistics.vercel.app",
+    },
   ],
   openGraph: {
     title: "Nexus Global Logistics – Reliable Shipping & Tracking",
     description:
       "Fast, secure, and trackable shipping solutions worldwide. Track shipments, manage deliveries, and optimize logistics effortlessly.",
-    url: "https://nexus-logistics.vercel.app",
+    url: "https://nexusglobal-logistics.vercel.app/",
     siteName: "Nexus Global Logistics",
     images: [
       {
