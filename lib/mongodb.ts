@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // lib/mongodb.ts
 import mongoose from "mongoose";
 
@@ -5,10 +6,25 @@ if (!process.env.MONGODB_URI) {
   throw new Error("Missing MONGODB_URI");
 }
 
-let cached = global.mongoose;
+// Type augmentation for global
+declare global {
+  // eslint-disable-next-line no-var
+  var mongoose:
+    | {
+        conn: typeof mongoose | null;
+        promise: Promise<typeof mongoose> | null;
+      }
+    | undefined;
+}
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+// Use a typed variable
+const cached: {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+} = (global as any).mongoose ?? { conn: null, promise: null };
+
+if (!(global as any).mongoose) {
+  (global as any).mongoose = cached;
 }
 
 export async function connectToDB() {
