@@ -3,8 +3,7 @@ import { Nunito_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import ChatBot from "@/components/chatbot";
-
-
+import TelegramIcon from "@/components/telegram-icon";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -68,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${nunitoSans.className} antialiased`}>
-        {children} <ChatBot/> <Toaster position="top-right" />
+        {children} <ChatBot /> <TelegramIcon /> <Toaster position="top-right" />
       </body>
     </html>
   );

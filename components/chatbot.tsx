@@ -26,7 +26,7 @@ export default function ChatBot() {
       {/* Floating Button */}
       <Button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 rounded-full w-14 h-14 shadow-lg bg-primary hover:bg-primary/90"
+        className="fixed bottom-6 left-6 rounded-full w-14 h-14 shadow-lg bg-primary hover:bg-primary/90"
       >
         {open ? (
           <X className="h-6 w-6" />

@@ -11,7 +11,7 @@ export function Hero() {
     }
   };
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden bg-linear-to-b from-background via-background to-secondary/20 lg:p-20 mt-10">
+    <section className="relative min-h-screen flex flex-col justify-center pt-10 overflow-hidden bg-linear-to-b from-background via-background to-secondary/20 lg:p-20 mt-10">
       {/* Background Truck Visualization (Simplified Grid/Line version) */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl">
