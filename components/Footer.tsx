@@ -16,7 +16,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "#" },
 
-    { icon: FaTelegram, href: "https://t.me/nexusgloballogistics" },
+    { icon: FaTelegram, href: "https://t.me/nexusgloballogistic" },
   ];
 
   return (
