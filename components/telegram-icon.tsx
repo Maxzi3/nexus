@@ -4,7 +4,7 @@ const TelegramIcon = () => {
   return (
     <div>
       <a
-        href="https://t.me/nexusgloballogistic"
+        href="https://t.me/nexusgloballogsi"
         target="_blank"
         className="fixed bottom-3 right-6 rounded-full w-20 h-14 shadow-lg "
       >
